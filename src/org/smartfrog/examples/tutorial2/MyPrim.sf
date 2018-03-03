@@ -1,0 +1,9 @@
+#include "org/smartfrog/components.sf"
+
+MyPrim extends Prim {
+    sfClass "org.smartfrog.examples.tutorial2.MyPrim";
+
+    debug true;
+    retryCount 10;
+    databaseRef TBD;
+}

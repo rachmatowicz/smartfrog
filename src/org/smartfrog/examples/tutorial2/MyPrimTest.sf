@@ -1,0 +1,10 @@
+#include "org/smartfrog/components.sf"
+#include "org/smartfrog/examples/tutorial2/MyPrim.sf"
+
+sfConfig extends Compound {
+    MyPrimTest extends MyPrim {
+        // uncomment sfExport if the component has no RMI interface
+        // sfExport false;
+        databaseRef "a database reference";
+    }
+}
