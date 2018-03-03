@@ -1,0 +1,8 @@
+// File ClientApp.sf
+#include "org/smartfrog/examples/tutorial2/clientserver/Client.sf"
+
+ClientApp extends Client {
+    // define any configuration here
+    debug true;
+    simulateTermination false;
+}

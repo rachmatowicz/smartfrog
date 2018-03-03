@@ -1,0 +1,8 @@
+// File ServerApp.sf
+#include "org/smartfrog/examples/tutorial2/clientserver/Server.sf"
+
+ServerApp extends Server {
+    // define any configuration ehere
+    debug false;
+    simulateTermination false;
+}

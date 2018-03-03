@@ -1,0 +1,29 @@
+// File ClientServerTest.sf
+#include "org/smartfrog/components.sf"
+#include "org/smartfrog/examples/tutorial2/clientserver/ClientApp.sf"
+#include "org/smartfrog/examples/tutorial2/clientserver/ServerApp.sf"
+
+//
+// This is an example of a Compound with two child components
+// They share common configuration, despite the fact that they are different components.
+// NOTE: sfProcessHost is a placement directive that makes sure that MyClient is started on the host "localhost" which has sfDaemon running on it
+// NOTE: ServerApp is not contrained in this compound - it is started separately
+//
+sfConfig extends Compound {
+    serverHost "localhost";
+    serverPort 4242;
+
+    MyClient extends ClientApp {
+        sfProcessHost "localhost";
+        server PARENT:serverHost;
+        port PARENT:serverPort;
+        simulateTermination true;
+        server LAZY ATTRIB MyServer;
+    }
+
+    MyServer extends ServerApp {
+        sfProcessHost PARENT:serverHost;
+        serverPort PARENT:serverPort;
+        simulateTermination false;
+    }
+}

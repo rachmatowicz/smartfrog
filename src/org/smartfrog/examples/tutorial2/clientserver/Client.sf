@@ -1,0 +1,11 @@
+#include "org/smartfrog/components.sf"
+
+Client extends Prim {
+    sfClass "org.smartfrog.examples.tutorial2.clientserver.Client";
+
+    debug TBD;
+    server TBD;
+    port TBD;
+    simulateTermination TBD;
+    server TBD;
+}
