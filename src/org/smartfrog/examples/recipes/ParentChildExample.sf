@@ -1,0 +1,19 @@
+// File ParentChildExample.sf
+#include "org/smartfrog/components.sf"
+
+Parent extends Compound {
+    // a parent component capable of spawning a child
+    sfClass "org.smartfrog.examples.tutorial.recipes.Parent";
+    myChild TBD;
+}
+
+Child extends Prim {
+    // a potential child component
+    sfClass "org.smartfrog.examples.tutorial.recipes.Child";
+}
+
+sfConfig extends Compound {
+    myParent extends Parent {
+        myChild extends LAZY Child; // resolve the childreference here
+    }
+}
